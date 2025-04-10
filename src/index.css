@@ -62,19 +62,19 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent;
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-r from-purple-600 to-blue-600;
+    @apply bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600;
   }
   
   .glass-card {
-    @apply backdrop-blur-md bg-gray-900/70 border border-gray-800;
+    @apply backdrop-blur-md bg-gray-900/70 border border-gray-800 rounded-lg shadow-xl;
   }
   
   .neo-blur {
-    @apply backdrop-blur-2xl bg-black/40 border border-white/10;
+    @apply backdrop-blur-2xl bg-black/40 border border-white/10 rounded-lg;
   }
 }
 
@@ -98,4 +98,23 @@
   .glow-border {
     box-shadow: 0 0 15px -5px rgba(168, 139, 250, 0.3);
   }
+  
+  .animated-gradient-bg {
+    background: linear-gradient(-45deg, #6366f1, #8b5cf6, #3b82f6, #6366f1);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
+
