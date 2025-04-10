@@ -11,7 +11,6 @@ import FAQ from '@/components/FAQ';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
-import SocialProofToast from '@/components/SocialProofToast';
 import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -69,7 +68,6 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCTA />
-      <SocialProofToast />
     </div>
   );
 };

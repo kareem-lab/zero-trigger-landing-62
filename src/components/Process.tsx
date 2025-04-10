@@ -4,11 +4,11 @@ import { Phone, Code, Rocket } from 'lucide-react';
 
 const Process = () => {
   return (
-    <section id="process" className="section bg-gray-950 text-white">
+    <section id="process" className="section bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="gradient-text">Process</span>
+            Our <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-500 bg-clip-text text-transparent">Process</span>
           </h2>
           <p className="text-gray-300 text-lg">
             We follow a proven methodology to deliver custom automation solutions that transform your business operations.
@@ -16,10 +16,10 @@ const Process = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="glass-card p-8 text-center relative hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] transition-all duration-300">
-            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+          <div className="neo-blur p-8 text-center relative transition-all duration-300 border border-purple-500/20 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/5">
+            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
             <div className="flex justify-center mb-6 animate-float">
-              <Phone className="h-16 w-16 text-zerotrigger-400" />
+              <Phone className="h-16 w-16 text-purple-400" />
             </div>
             <h3 className="text-xl font-bold mb-3 text-white">Discovery Call</h3>
             <p className="text-gray-300">
@@ -27,10 +27,10 @@ const Process = () => {
             </p>
           </div>
           
-          <div className="glass-card p-8 text-center relative hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] transition-all duration-300">
-            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+          <div className="neo-blur p-8 text-center relative transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5">
+            <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
             <div className="flex justify-center mb-6 animate-float" style={{ animationDelay: '0.2s' }}>
-              <Code className="h-16 w-16 text-zerotrigger-400" />
+              <Code className="h-16 w-16 text-blue-400" />
             </div>
             <h3 className="text-xl font-bold mb-3 text-white">Design & Build</h3>
             <p className="text-gray-300">
@@ -38,10 +38,10 @@ const Process = () => {
             </p>
           </div>
           
-          <div className="glass-card p-8 text-center relative hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] transition-all duration-300">
+          <div className="neo-blur p-8 text-center relative transition-all duration-300 border border-indigo-500/20 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/5">
             <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
             <div className="flex justify-center mb-6 animate-float" style={{ animationDelay: '0.4s' }}>
-              <Rocket className="h-16 w-16 text-zerotrigger-400" />
+              <Rocket className="h-16 w-16 text-indigo-400" />
             </div>
             <h3 className="text-xl font-bold mb-3 text-white">Launch & Optimize</h3>
             <p className="text-gray-300">
