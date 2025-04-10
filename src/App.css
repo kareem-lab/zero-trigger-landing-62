@@ -1,8 +1,10 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: #e2e8f0;
 }
 
 .logo {
@@ -35,8 +37,25 @@
 
 .card {
   padding: 2em;
+  background-color: #1e1e2e;
+  border: 1px solid #2d2d3a;
+  border-radius: 0.75rem;
 }
 
 .read-the-docs {
   color: #888;
 }
+
+.glass-card {
+  background: rgba(30, 30, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #a78bfa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
