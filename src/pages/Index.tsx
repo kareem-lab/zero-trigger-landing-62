@@ -11,6 +11,8 @@ import FAQ from '@/components/FAQ';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
+import SocialProofToast from '@/components/SocialProofToast';
+import { toast } from "@/hooks/use-toast";
 
 const Index = () => {
   // Smooth scroll functionality
@@ -42,6 +44,14 @@ const Index = () => {
         }, 100);
       }
     }
+
+    // Show welcome toast after a short delay
+    setTimeout(() => {
+      toast({
+        title: "Welcome to ZeroTrigger",
+        description: "Book your free strategy call today and start saving 15+ hours per week!",
+      });
+    }, 2000);
   }, []);
   
   return (
@@ -59,6 +69,7 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCTA />
+      <SocialProofToast />
     </div>
   );
 };

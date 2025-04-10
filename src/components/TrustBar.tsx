@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star, Users, Award, Shield } from 'lucide-react';
+import { Star, Users, Award, Shield, ThumbsUp } from 'lucide-react';
 
 const TrustBar = () => {
   return (
@@ -24,6 +24,11 @@ const TrustBar = () => {
           <div className="text-white font-medium flex items-center gap-2 bg-gray-800/80 p-3 rounded-lg border border-gray-700">
             <Award className="h-5 w-5 text-zerotrigger-400" />
             <span>We've automated 125+ businesses</span>
+          </div>
+          
+          <div className="hidden md:flex text-white font-medium items-center gap-2 bg-gray-800/80 p-3 rounded-lg border border-gray-700">
+            <ThumbsUp className="h-5 w-5 text-blue-400" />
+            <span>Trusted by 7-figure business owners</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
+
 import React from 'react';
-import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, Timer } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
 const Hero = () => {
   const scrollToBooking = () => {
     const element = document.getElementById('booking');
@@ -10,6 +12,7 @@ const Hero = () => {
       });
     }
   };
+
   return <div className="relative pt-16 pb-20 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950">
       <div className="container-custom relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center pt-8">
@@ -17,7 +20,12 @@ const Hero = () => {
           animationDelay: '0.2s'
         }}>
             {/* Urgent Limited Time Offer Banner */}
-            
+            <div className="bg-gradient-to-r from-amber-500/30 to-amber-600/30 p-3 rounded-lg border border-amber-500/50 mb-6 flex items-center gap-2 animate-pulse">
+              <Clock className="h-5 w-5 text-amber-400" />
+              <p className="text-amber-300 font-medium text-sm">
+                LIMITED TIME OFFER: Book today and get a FREE business automation audit ($497 value)
+              </p>
+            </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-white">
               Stop Wasting <span className="gradient-text">Hours</span> on Tasks AI Can Do in Minutes

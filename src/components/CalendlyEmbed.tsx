@@ -1,13 +1,16 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, Shield, ThumbsUp, Users } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
+
 const CalendlyEmbed = () => {
   const [countdownTime, setCountdownTime] = useState({
     hours: 24,
     minutes: 0,
     seconds: 0
   });
+  
   useEffect(() => {
     // Load Calendly widget script
     const script = document.createElement('script');
@@ -46,9 +49,11 @@ const CalendlyEmbed = () => {
       document.body.removeChild(script);
     };
   }, []);
+  
   const formatTimeUnit = (unit: number) => {
     return unit < 10 ? `0${unit}` : unit;
   };
+  
   const scrollToCalendly = () => {
     const element = document.getElementById('calendly-widget');
     if (element) {
@@ -61,10 +66,35 @@ const CalendlyEmbed = () => {
       });
     }
   };
+  
   return <section id="booking" className="section bg-gray-950 text-white">
       <div className="container-custom">
-        <div className="flex justify-center">
-          
+        <div className="flex justify-center mb-8">
+          <div className="bg-zerotrigger-600/20 px-6 py-4 rounded-lg border border-zerotrigger-500/30 flex items-center gap-4">
+            <div className="text-white font-bold text-lg">Limited Time Offer Expires In:</div>
+            <div className="grid grid-flow-col gap-1 text-center auto-cols-max">
+              <div className="flex flex-col p-2 bg-gray-800 rounded-lg text-white">
+                <span className="font-mono text-xl">
+                  {formatTimeUnit(countdownTime.hours)}
+                </span>
+                <span className="text-xs font-light">hours</span>
+              </div>
+              <div className="flex items-center text-lg">:</div>
+              <div className="flex flex-col p-2 bg-gray-800 rounded-lg text-white">
+                <span className="font-mono text-xl">
+                  {formatTimeUnit(countdownTime.minutes)}
+                </span>
+                <span className="text-xs font-light">min</span>
+              </div>
+              <div className="flex items-center text-lg">:</div>
+              <div className="flex flex-col p-2 bg-gray-800 rounded-lg text-white">
+                <span className="font-mono text-xl">
+                  {formatTimeUnit(countdownTime.seconds)}
+                </span>
+                <span className="text-xs font-light">sec</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -150,4 +180,5 @@ const CalendlyEmbed = () => {
       </div>
     </section>;
 };
+
 export default CalendlyEmbed;

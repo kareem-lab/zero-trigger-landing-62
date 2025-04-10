@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Clock } from 'lucide-react';
+import { Menu, X, Clock, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
@@ -54,20 +54,32 @@ const Navbar = () => {
           </button>
           <Button 
             onClick={() => scrollToSection('booking')}
-            className="bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 animated-btn flex items-center gap-1"
+            className="bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 flex items-center gap-1 relative overflow-hidden group"
           >
+            <span className="absolute w-full h-full top-0 left-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
             <Clock className="h-4 w-4" />
-            Book Call Now
+            <span className="relative z-10">Book Call Now</span>
+            <div className="absolute top-0 right-0 bg-red-500 text-white text-xs px-1 rounded-bl">Free</div>
           </Button>
         </div>
         
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-gray-300"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <Button 
+            onClick={() => scrollToSection('booking')}
+            className="bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 flex items-center gap-1"
+            size="sm"
+          >
+            <Clock className="h-3 w-3" />
+            <span>Book Now</span>
+          </Button>
+          <button 
+            className="text-gray-300"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       
       {/* Mobile Navigation */}
@@ -87,8 +99,8 @@ const Navbar = () => {
               onClick={() => scrollToSection('booking')}
               className="w-full bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 flex items-center justify-center gap-1"
             >
-              <Clock className="h-4 w-4" />
-              Book Call Now
+              <ArrowRight className="h-4 w-4" />
+              Book Your Free Call Now
             </Button>
           </div>
         </div>
