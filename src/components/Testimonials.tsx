@@ -24,6 +24,20 @@ const testimonials = [
     position: "SaaS Company Founder",
     stars: 5,
     image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    quote: "What impressed me most was how quickly they understood my business. The automation systems were custom-fit to my exact workflow, not some generic template.",
+    name: "Thomas Wright",
+    position: "E-commerce Consultant",
+    stars: 5,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    quote: "I was skeptical at first, but their strategy call opened my eyes to automation possibilities I hadn't considered. Just that one call saved me countless hours of research.",
+    name: "Rebecca Chen",
+    position: "Financial Advisor",
+    stars: 5,
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -41,8 +55,37 @@ const Testimonials = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.slice(0, 3).map((testimonial, index) => (
             <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <CardHeader className="pb-2 relative">
+                <div className="flex">
+                  {[...Array(testimonial.stars)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <Quote className="absolute top-4 right-4 h-10 w-10 text-purple-400/20" />
+              </CardHeader>
+              <CardContent className="pb-2">
+                <p className="italic text-lg">"{testimonial.quote}"</p>
+              </CardContent>
+              <CardFooter className="pt-4 border-t border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full overflow-hidden">
+                    <img src={testimonial.image} alt={testimonial.name} className="h-full w-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-white/80 text-sm">{testimonial.position}</p>
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          {testimonials.slice(3, 5).map((testimonial, index) => (
+            <Card key={index + 3} className="bg-white/10 backdrop-blur-sm border-white/20 text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <CardHeader className="pb-2 relative">
                 <div className="flex">
                   {[...Array(testimonial.stars)].map((_, i) => (

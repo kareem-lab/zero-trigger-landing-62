@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { UserPlus, MessageSquare, FileCheck, Users, Lightbulb } from 'lucide-react';
+import { UserPlus, MessageSquare, FileCheck, Users, Lightbulb, ChartBar, Shield, Sparkles, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ServicesData = [
@@ -28,6 +28,26 @@ const ServicesData = [
     icon: <Lightbulb className="h-12 w-12 p-2 bg-yellow-50 text-zerotrigger-600 rounded-xl" />,
     title: "Project Management",
     description: "Build custom project management automation that ensures deadlines are met, communication is streamlined, and project delivery is consistent."
+  },
+  {
+    icon: <ChartBar className="h-12 w-12 p-2 bg-red-50 text-zerotrigger-600 rounded-xl" />,
+    title: "Business Analytics",
+    description: "Implement automated reporting and analytics systems that provide real-time insights into your business performance and client results."
+  },
+  {
+    icon: <Shield className="h-12 w-12 p-2 bg-teal-50 text-zerotrigger-600 rounded-xl" />,
+    title: "Operations Security",
+    description: "Secure your business operations with automated backup systems, access controls, and compliance monitoring to protect sensitive data."
+  },
+  {
+    icon: <Sparkles className="h-12 w-12 p-2 bg-indigo-50 text-zerotrigger-600 rounded-xl" />,
+    title: "AI Integration",
+    description: "Incorporate the latest AI technologies into your existing workflows to enhance productivity, creativity, and decision-making processes."
+  },
+  {
+    icon: <Clock className="h-12 w-12 p-2 bg-pink-50 text-zerotrigger-600 rounded-xl" />,
+    title: "Workflow Optimization",
+    description: "Analyze and refine your business processes to identify and eliminate bottlenecks, reducing operational costs and increasing efficiency."
   }
 ];
 
