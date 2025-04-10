@@ -1,18 +1,11 @@
-
 import React from 'react';
 import { Clock, Smartphone, TrendingUp, CheckCircle } from 'lucide-react';
-
 const Benefits = () => {
-  return (
-    <section id="benefits" className="section bg-gray-50">
+  return <section id="benefits" className="section bg-gray-50">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" 
-              alt="Business Growth Through Automation" 
-              className="rounded-lg shadow-lg"
-            />
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070" alt="Business Growth Through Automation" className="rounded-lg shadow-lg" />
           </div>
           
           <div>
@@ -26,7 +19,7 @@ const Benefits = () => {
                   <Clock className="h-6 w-6 text-zerotrigger-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Save 10+ Hours Every Week</h3>
+                  <h3 className="text-xl font-bold mb-2">Save 15+ Hours Every Week</h3>
                   <p className="text-gray-700">
                     Our automation systems handle repetitive tasks, freeing you and your team to focus on strategy and growth activities.
                   </p>
@@ -72,8 +65,6 @@ const Benefits = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Benefits;
