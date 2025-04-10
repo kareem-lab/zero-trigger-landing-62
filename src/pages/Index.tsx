@@ -12,8 +12,11 @@ import CalendlyEmbed from '@/components/CalendlyEmbed';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { toast } from "@/hooks/use-toast";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  
   // Smooth scroll functionality
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -44,14 +47,15 @@ const Index = () => {
       }
     }
 
-    // Show welcome toast after a short delay
+    // Show welcome toast after a short delay - adjust size for mobile
     setTimeout(() => {
       toast({
         title: "Welcome to ZeroTrigger",
-        description: "Book your free strategy call today and start saving 15+ hours per week!",
+        description: "Book your free strategy call today!",
+        className: isMobile ? "max-w-[90vw]" : "",
       });
     }, 2000);
-  }, []);
+  }, [isMobile]);
   
   return (
     <div className="flex flex-col min-h-screen bg-gray-950">
