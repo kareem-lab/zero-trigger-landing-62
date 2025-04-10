@@ -36,25 +36,25 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="section bg-gray-50">
+    <section id="faq" className="section bg-gray-950 text-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-gray-300 text-lg">
             Get answers to common questions about our automation services.
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-sm p-6">
+        <div className="max-w-3xl mx-auto glass-card p-6">
           <Accordion type="single" collapsible className="w-full">
             {faqItems.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-semibold text-lg">
+              <AccordionItem key={index} value={`item-${index}`} className="border-gray-700">
+                <AccordionTrigger className="text-left font-semibold text-lg text-white">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-700">
+                <AccordionContent className="text-gray-300">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

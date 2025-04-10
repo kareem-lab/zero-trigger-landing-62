@@ -18,39 +18,39 @@ const CalendlyEmbed = () => {
   }, []);
 
   return (
-    <section id="booking" className="section bg-white">
+    <section id="booking" className="section bg-gray-950 text-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to <span className="gradient-text">Automate</span> Your Business?
             </h2>
-            <p className="text-gray-700 text-lg mb-8">
+            <p className="text-gray-300 text-lg mb-8">
               Book a free 30-minute strategy call with our automation experts. We'll discuss your current challenges and identify the best automation opportunities for your business.
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <Clock className="h-6 w-6 text-zerotrigger-600 mt-1" />
+                <Clock className="h-6 w-6 text-zerotrigger-400 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">30-Minute Strategy Session</h3>
-                  <p className="text-gray-700">Get personalized automation recommendations</p>
+                  <p className="text-gray-300">Get personalized automation recommendations</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <Calendar className="h-6 w-6 text-zerotrigger-600 mt-1" />
+                <Calendar className="h-6 w-6 text-zerotrigger-400 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">Flexible Scheduling</h3>
-                  <p className="text-gray-700">Book a time that works for your schedule</p>
+                  <p className="text-gray-300">Book a time that works for your schedule</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
-                <MessageSquare className="h-6 w-6 text-zerotrigger-600 mt-1" />
+                <MessageSquare className="h-6 w-6 text-zerotrigger-400 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg">No Obligation</h3>
-                  <p className="text-gray-700">Just valuable insights for your business</p>
+                  <p className="text-gray-300">Just valuable insights for your business</p>
                 </div>
               </div>
             </div>
@@ -69,11 +69,11 @@ const CalendlyEmbed = () => {
             </div>
           </div>
           
-          <div id="calendly-widget" className="bg-white rounded-lg shadow-lg p-1 md:p-4">
-            {/* Calendly inline widget */}
+          <div id="calendly-widget" className="glass-card p-1 md:p-4">
+            {/* Calendly inline widget with the correct link */}
             <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/d/xxxx-xxxx/strategy-session" 
+              data-url="https://calendly.com/kareem-zerotrigger/automation" 
               style={{ minWidth: '320px', height: '650px' }}
             ></div>
             
