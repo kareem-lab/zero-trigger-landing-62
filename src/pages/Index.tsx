@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   // Smooth scroll functionality
@@ -57,6 +58,7 @@ const Index = () => {
         <CalendlyEmbed />
       </main>
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };

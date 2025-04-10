@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Clock } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "py-2 bg-gray-900/95 shadow-md backdrop-blur-sm" : "py-4 bg-transparent"
+        isScrolled ? "py-2 bg-gray-900/95 shadow-md backdrop-blur-sm" : "py-3 bg-transparent"
       )}
     >
       <div className="container-custom flex justify-between items-center">
@@ -47,22 +47,17 @@ const Navbar = () => {
             Services
           </button>
           <button onClick={() => scrollToSection('benefits')} className="text-gray-300 hover:text-zerotrigger-400 transition-colors">
-            Benefits
-          </button>
-          <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-zerotrigger-400 transition-colors">
-            Our Process
+            Results
           </button>
           <button onClick={() => scrollToSection('testimonials')} className="text-gray-300 hover:text-zerotrigger-400 transition-colors">
-            Testimonials
-          </button>
-          <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-zerotrigger-400 transition-colors">
-            FAQ
+            Client Stories
           </button>
           <Button 
             onClick={() => scrollToSection('booking')}
-            className="bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 animated-btn"
+            className="bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 animated-btn flex items-center gap-1"
           >
-            Book a Call
+            <Clock className="h-4 w-4" />
+            Book Call Now
           </Button>
         </div>
         
@@ -83,22 +78,17 @@ const Navbar = () => {
               Services
             </button>
             <button onClick={() => scrollToSection('benefits')} className="text-gray-300 hover:text-zerotrigger-400 py-2 transition-colors">
-              Benefits
-            </button>
-            <button onClick={() => scrollToSection('process')} className="text-gray-300 hover:text-zerotrigger-400 py-2 transition-colors">
-              Our Process
+              Results
             </button>
             <button onClick={() => scrollToSection('testimonials')} className="text-gray-300 hover:text-zerotrigger-400 py-2 transition-colors">
-              Testimonials
-            </button>
-            <button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-zerotrigger-400 py-2 transition-colors">
-              FAQ
+              Client Stories
             </button>
             <Button 
               onClick={() => scrollToSection('booking')}
-              className="w-full bg-zerotrigger-600 text-white hover:bg-zerotrigger-700"
+              className="w-full bg-zerotrigger-600 text-white hover:bg-zerotrigger-700 flex items-center justify-center gap-1"
             >
-              Book a Call
+              <Clock className="h-4 w-4" />
+              Book Call Now
             </Button>
           </div>
         </div>
