@@ -1,67 +1,70 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, Shield, ThumbsUp, Users } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
-
 const CalendlyEmbed = () => {
   const [countdownTime, setCountdownTime] = useState({
     hours: 24,
     minutes: 0,
     seconds: 0
   });
-  
   useEffect(() => {
     // Load Calendly widget script
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
-    
+
     // Set up countdown timer
     const timer = setInterval(() => {
       setCountdownTime(prevTime => {
         if (prevTime.seconds > 0) {
-          return { ...prevTime, seconds: prevTime.seconds - 1 };
+          return {
+            ...prevTime,
+            seconds: prevTime.seconds - 1
+          };
         } else if (prevTime.minutes > 0) {
-          return { ...prevTime, minutes: prevTime.minutes - 1, seconds: 59 };
+          return {
+            ...prevTime,
+            minutes: prevTime.minutes - 1,
+            seconds: 59
+          };
         } else if (prevTime.hours > 0) {
-          return { ...prevTime, hours: prevTime.hours - 1, minutes: 59, seconds: 59 };
+          return {
+            ...prevTime,
+            hours: prevTime.hours - 1,
+            minutes: 59,
+            seconds: 59
+          };
         }
         return prevTime;
       });
     }, 1000);
-    
     return () => {
       // Clean up
       clearInterval(timer);
       document.body.removeChild(script);
     };
   }, []);
-
   const formatTimeUnit = (unit: number) => {
     return unit < 10 ? `0${unit}` : unit;
   };
-  
   const scrollToCalendly = () => {
     const element = document.getElementById('calendly-widget');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
       toast({
         title: "Scroll to see available time slots",
-        description: "Complete the form to secure your spot!",
+        description: "Complete the form to secure your spot!"
       });
     }
   };
-
-  return (
-    <section id="booking" className="section bg-gray-950 text-white">
+  return <section id="booking" className="section bg-gray-950 text-white">
       <div className="container-custom">
         <div className="flex justify-center">
-          <div className="bg-red-500/80 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 mb-8 animate-pulse">
-            <Clock className="h-5 w-5" />
-            <span>Time-limited offer expires in: {formatTimeUnit(countdownTime.hours)}:{formatTimeUnit(countdownTime.minutes)}:{formatTimeUnit(countdownTime.seconds)}</span>
-          </div>
+          
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -120,10 +123,7 @@ const CalendlyEmbed = () => {
             </div>
             
             <div className="hidden md:block">
-              <Button 
-                className="bg-zerotrigger-600 hover:bg-zerotrigger-700 text-white font-bold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all w-full"
-                onClick={scrollToCalendly}
-              >
+              <Button className="bg-zerotrigger-600 hover:bg-zerotrigger-700 text-white font-bold px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all w-full" onClick={scrollToCalendly}>
                 Secure Your Free Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -135,25 +135,19 @@ const CalendlyEmbed = () => {
             </div>
             
             {/* Calendly inline widget with the correct link */}
-            <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/kareem-zerotrigger/automation" 
-              style={{ minWidth: '320px', height: '630px' }}
-            ></div>
+            <div className="calendly-inline-widget" data-url="https://calendly.com/kareem-zerotrigger/automation" style={{
+            minWidth: '320px',
+            height: '630px'
+          }}></div>
             
             <div className="md:hidden mt-6">
-              <Button 
-                className="w-full bg-zerotrigger-600 hover:bg-zerotrigger-700 text-white font-bold py-4 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all"
-                onClick={scrollToCalendly}
-              >
+              <Button className="w-full bg-zerotrigger-600 hover:bg-zerotrigger-700 text-white font-bold py-4 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all" onClick={scrollToCalendly}>
                 Secure Your Free Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CalendlyEmbed;
